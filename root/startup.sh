@@ -5,6 +5,7 @@ trap "killall sleep dnsmasq; exit" TERM INT
 cat > /etc/dnsmasq.conf <<__EOF__
 user=root
 no-resolv
+no-negcache
 domain=${__DOMAINNAME}
 expand-hosts
 hostsdir=/etc/dnshosts.d
